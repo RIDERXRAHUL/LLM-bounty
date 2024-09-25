@@ -1,49 +1,29 @@
-# Sentiment Analysis Chatbot
+# Interactive Chatbot with LLaMA 2 and Sentiment Analysis
+
+[Open in Google Colab](https://colab.research.google.com/drive/1KoI3iZtTzfFfAYYMYVMa4ncp13jxGHdX?usp=sharing)
 
 ## Overview
 
-This project implements a chatbot that utilizes sentiment analysis to enhance user interaction. The chatbot can detect whether a user's sentiment is positive, neutral, or negative and responds accordingly, making the conversation more engaging and empathetic.
-
-## Technologies Used
-
-- **Python**: The primary programming language for this project.
-- **Google Colab**: An online platform used for running the code.
-- **Transformers**: A library from Hugging Face used for pre-trained models like GPT-2.
-- **Torch**: A deep learning framework used for model training and inference.
+This project implements an interactive chatbot using the LLaMA 2 model and sentiment analysis to create engaging conversations. The chatbot can understand user input and respond based on the detected emotional tone, making interactions feel more personal and human-like.
 
 ## Features
 
-- **Sentiment Detection**: The chatbot analyzes the emotional tone of user input.
-- **Contextual Responses**: Based on the detected sentiment, the chatbot responds in a way that is appropriate to the user's mood.
-- **User-Friendly**: The chatbot aims to provide a seamless and supportive user experience.
+- **Interactive Chat**: The chatbot listens for user input and responds appropriately.
+- **Sentiment Analysis**: Analyzes the emotional tone of the input, allowing for tailored responses.
+- **Engaging User Experience**: The chatbot adapts its behavior based on the user's mood.
 
 ## Installation
 
-To set up this project, follow these steps:
+### Installing Required Libraries
 
-1. Clone the repository or download the notebook file.
-2. Install the required libraries by running the following command in your terminal or within Google Colab:
-    ```bash
-    pip install transformers
-    pip install --upgrade torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-    ```
-3. Log in to Hugging Face to access the models:
-    ```python
-    from huggingface_hub import notebook_login
-    notebook_login()
-    ```
-4. Run the notebook to interact with the chatbot!
+In the first cell of the notebook, we install the necessary libraries:
 
-## How to Use
+```python
+import os
 
-1. Input a sentence into the chatbot.
-2. The chatbot will analyze the sentiment of your input.
-3. Based on the sentiment, it will provide a response that aims to either empathize with negative sentiments or celebrate positive ones.
+def install_dependencies():
+    """Install transformers and torch with GPU support"""
+    os.system("pip install transformers")
+    os.system("pip install --upgrade torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118")
 
-## Conclusion
-
-This project showcases the potential of combining sentiment analysis with chatbot technology to create a more human-like interaction. Feel free to explore and modify the code to suit your needs!
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+install_dependencies()
